@@ -7,7 +7,7 @@ export class Ramadan implements RamadanI {
     latitude: Number;
     longitude: Number;
 
-  constructor(o?: Partial<Ramadan>) {
+  constructor( o ? : Partial<Ramadan>) {
     if (o){
       Object.assign(this, o);
     }

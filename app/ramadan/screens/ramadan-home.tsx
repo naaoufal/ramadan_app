@@ -1,11 +1,12 @@
 import React,{useEffect} from 'react';
-import { StyleSheet, Text, View,TextInput,Button,Alert } from 'react-native';
+import { Text, View,TextInput,Button,Alert } from 'react-native';
 import { RamadanController } from './controllers/ramadan-controller';
 import { Ramadan } from '../../shared/models/ramadan.model'
 import {RamadanEnum} from '../../shared/enums/ramadan.enum';
 
 
 export function RamadanHome() {
+
     let ramadanController = new  RamadanController();
     let ramadanEnum = RamadanEnum;
     
@@ -26,32 +27,28 @@ export function RamadanHome() {
         ramadanController.Add(ramadan);
     }
   return (
-    <View style={styles.container}>
-        <Text> Test Booked : {ramadanEnum.BOOKED} & Test Free : {ramadanEnum.FREE}</Text>
+    <View>
+      <Text> Test Booked : {ramadanEnum.BOOKED} & Test Free : {ramadanEnum.FREE}</Text>
       <Text> {(username === '') ? '' : 'Bonjour, Je suis : '+ username} </Text>
 
       <Text> {(message === '') ? '' : 'Mon message est : '+ message} </Text>
       <Text> {(latitude === '' && longitude === '') ? '' : 'Ma position est : '+ '('+latitude+','+longitude+')'} </Text>
       <TextInput
-        style={styles.input}
         placeholder={'entrer username'}
         onChangeText={onChangeUsername}
         value={username}
       />
       <TextInput
-        style={styles.input}
         placeholder={'entrer message'}
         onChangeText={onChangeMessage}
         value={message}
       />
       <TextInput
-        style={styles.input}
         placeholder={'entrer latitude'}
         onChangeText={onChangeLatitude}
         value={latitude}
       />
       <TextInput
-        style={styles.input}
         placeholder={'entrer longitude'}
         onChangeText={onChangeLongitude}
         value={longitude}
@@ -72,14 +69,4 @@ export function Test(){
     console.log('hola')
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-  },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-  },
-});
 
