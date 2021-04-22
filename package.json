@@ -11,6 +11,7 @@
     "@firebase/app": "^0.6.20",
     "@react-native-firebase/app": "^11.2.0",
     "@react-native-firebase/firestore": "^11.2.0",
+    "@react-navigation/drawer": "^5.12.5",
     "expo": "~40.0.0",
     "expo-status-bar": "~1.0.3",
     "firebase": "^8.4.1",

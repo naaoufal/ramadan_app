@@ -1,8 +1,12 @@
 import React,{useEffect} from 'react';
-import { Text, View,TextInput,Button,Alert } from 'react-native';
+import { Text, View,TextInput, Button, Alert } from 'react-native';
 import { RamadanController } from './controllers/ramadan-controller';
 import { Ramadan } from '../../shared/models/ramadan.model'
 import {RamadanEnum} from '../../shared/enums/ramadan.enum';
+import * as firebase from 'firebase';
+import firestore from 'firebase/firestore';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 export function RamadanHome() {
@@ -25,9 +29,11 @@ export function RamadanHome() {
         ramadan.longitude=Number(longitude);
 
         ramadanController.Add(ramadan);
-    }
+    }  
+
   return (
-    <View>
+    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+
       <Text> Test Booked : {ramadanEnum.BOOKED} & Test Free : {ramadanEnum.FREE}</Text>
       <Text> {(username === '') ? '' : 'Bonjour, Je suis : '+ username} </Text>
 
@@ -57,9 +63,10 @@ export function RamadanHome() {
       <Button
         title="Tester"
         onPress={() => {
-            Alert.alert('Simple Button pressed');
+            Alert.alert('Worked');
             add()
         }}
+        color="blue"
       />
     </View>
   );

@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View,SafeAreaView,ScrollView  } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView  } from 'react-native';
 import { RamadanHome } from './app/ramadan/screens/ramadan-home';
 import { RamadanMap } from './app/ramadan/screens/ramadan-map';
 
